@@ -1,0 +1,39 @@
+<!-- <h1>Welocme#index</h1>
+<p>Find me in app/views/welocme/index.html.erb</p> -->
+<div class="title">
+<h1>AIRBNB</h1>
+<h2>opportunity's are now endless with Airbnb!</h2>
+</div>
+
+
+<center>
+<div class="navigation_bar">
+
+ 	<a href="listings/new"><h>Become a Host<h></a>
+
+ 	<a href="/"><h>Messages<h></a>
+
+ 	<a href="/"><h>help<h></a> <a href="/users/<%=current_user.id %>"><h>profile<h></a>
+
+  	<a href="listings"><h>Reservations<h></a>
+
+ 	<a href="/"><h>logout<h></a>
+</div>
+
+</center>
+
+
+<div class="video_container">
+    <h1><span>Rent unique places to stay from local hosts in 190+ countries.</span><br>Welcome to AIRBNB <%=current_user.email if current_user != nil%></h1>
+          <video autoplay loop="loop" preload="auto" class="photo">
+             <source src="https://a0.muscache.com/airbnb/static/P1-background-vid-compressed.mp4" type='video/mp4'>
+               <source src="https://a0.muscache.com/airbnb/static/P1-background-vid-compressed.webm" type='video/webm'>
+          </video>
+</div>
+
+<div>
+<center>
+<h1>welcome to Airbnb</h1>
+<h3>opportunity are now endless with Airbnb.</h3>
+</center>
+</div>

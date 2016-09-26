@@ -1,0 +1,6 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+<a href="/"><h>click to redirect to homepage</h></a>
+<div>  <%= image_tag (@user.avatars[0].url) unless @user.avatars[0].nil? %>
+  <%= @user.email %>
+</div>

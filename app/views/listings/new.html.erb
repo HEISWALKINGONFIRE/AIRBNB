@@ -1,0 +1,19 @@
+<center>
+<%= form_for @listing, url: listing_confirm_path do |f| %>
+	<%= f.label :name%>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :location%>
+	<%= f.text_field :location %>
+	<br>
+	<%= f.label :number_of_people_allowed%>
+	<%= f.number_field :num_of_people%>
+	<br>
+	<%= f.label :price%>
+	<%= f.number_field :price%>
+	<br>
+	<%= f.file_field :avatars, multiple: true %>
+	<br>
+	<%= f.submit %>
+<%end%>
+</center>

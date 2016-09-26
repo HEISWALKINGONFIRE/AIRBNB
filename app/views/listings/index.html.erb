@@ -1,0 +1,15 @@
+<% @listings.each do |listing| %>
+	<%= image_tag (listing.avatars[0].url) unless listing.avatars[0].nil? %>
+	<%= listing.name %><br>
+	<%= listing.location%><br>
+	<%= listing.price %><br>
+	<%= link_to "BOOK NOW", new_listing_reservation_path(listing.id)%><br>
+<%end%>
+
+<div>
+<% (1..@total_pages).each do |page|%>
+<!-- alternative <a herf=""></a> -->
+<%= link_to page, controller: "listings", action: "index", page: page%>&nbsp;
+<%end%>	
+</div>
+

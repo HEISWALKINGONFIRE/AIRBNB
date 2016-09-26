@@ -1,0 +1,24 @@
+<h1>Reservation Page</h1> 
+
+<%= form_for [@reservation], url: listing_reservations_path() do |form| %>  
+  <%=form.label :number_of_people%>
+  <%=form.number_field :user_id%>
+  <%= form.hidden_field :listing_id , :value => @listing.id%>
+  <br>
+ <!--  <%=form.label :price%>
+  <%=form.number_field :price%>
+  <br> -->
+  <%=form.label :check_in_date%>
+  <%=form.date_field :check_in_date, placeholder:  "dd/mm/yy"%>
+  <br>
+  <%=form.label :check_out_date%>
+  <%=form.date_field :check_out_date, placeholder: "dd/mm/yy"%>
+  <br>
+  price per day <%=@listing.price%>
+  <br>
+  location at <%=@listing.location%>
+  <br>
+
+  <%= form.submit %>
+<%end%>
+

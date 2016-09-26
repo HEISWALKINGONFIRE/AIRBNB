@@ -1,0 +1,27 @@
+
+<%=@listing.name%>
+
+<%= form_for(@listing) do |f| %>
+	<%= f.label @listing.name %>
+	<%= f.hidden_field :name %>
+	<br>
+	<%= f.label @listing.location %>
+	<%= f.hidden_field :location %>
+	<br>
+	<%= f.label @listing.num_of_people %>
+	<%= f.hidden_field :num_of_people%>
+	<br>
+	<%= f.label @listing.price %>
+	<%= f.hidden_field :price%>
+	<br>
+	<%= f.hidden_field :avatars, multiple: true %>
+	<br>
+	<%= f.submit "Confirm?"%>
+<%end%>
+
+
+
+<%= image_tag (@listing.avatars[0].url )  %>
+todo print out confirmation order.
+<a href="listings_path"><h1>Done</h1></a>
+
