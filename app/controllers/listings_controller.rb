@@ -17,8 +17,11 @@ class ListingsController < ApplicationController
 		if @listing.save
 			redirect_to listing_path(@listing.id)
 			# render listing_path(@listing.id)
+			# redirect_to '/listings/show/#{@listing.id}'
 		else
-			redirect_to new_listing_path
+			redirect_to new_listing_path 
+			# render :new
+			# render '/listings/new'
 		end
 		
 	end

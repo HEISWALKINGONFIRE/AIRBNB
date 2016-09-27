@@ -1,7 +1,10 @@
 confirmation page for reservation
+<center>
+form_for
 <%=@reservation.listing.name%>
-
-<%=@reservation.listing.location%>
-<%=@reservation.listing.num_of_people%>
-<%=%>
-<%=%> 
+location <%=@reservation.listing.location%><br>
+number of people <%=@reservation.listing.num_of_people%><br>
+check in <%=@reservation.check_in_date%><br>
+check out <%=@reservation.check_out_date%><br>
+total price <%=@reservation.listing.price%><br>
+</center>

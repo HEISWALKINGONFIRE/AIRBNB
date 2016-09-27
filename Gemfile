@@ -36,6 +36,8 @@ gem 'carrierwave', '>=1.0.0.beta'
 gem 'mini_magick'
 # better error
 gem "binding_of_caller"
+# active job
+gem 'sidekiq'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
