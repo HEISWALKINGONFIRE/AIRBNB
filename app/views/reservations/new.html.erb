@@ -1,13 +1,13 @@
 <h1>Reservation Page</h1> 
 
-<%= form_for [@reservation], url: listing_reservations_path() do |form| %>  
+<%= form_for [@listing, @reservation]  do |form| %>  
   <%=form.label :number_of_people%>
   <%=form.number_field :user_id%>
-  <%= form.hidden_field :listing_id , :value => @listing.id%>
+ <!--  < %=  form.hidden_field :listing_id , :value => @listing.id%> --> <!-- this is for normal routes
+  -->
   <br>
- <!--  <%=form.label :price%>
-  <%=form.number_field :price%>
-  <br> -->
+  <%=form.hidden_field :price, value: @listing.price %>
+  <br>
   <%=form.label :check_in_date%>
   <%=form.date_field :check_in_date, placeholder:  "dd/mm/yy"%>
   <br>
@@ -22,3 +22,4 @@
   <%= form.submit %>
 <%end%>
 
+<!-- url: listing_reservations_path() do this for nested routes on line 3 -->

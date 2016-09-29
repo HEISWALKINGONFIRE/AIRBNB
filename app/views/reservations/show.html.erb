@@ -1,0 +1,33 @@
+<h3>Your Reservation</h3>
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <p>Listing name: <%= link_to @reservation.listing.name, listing_path(@reservation.listing) %></p>
+    <p>No. of Guest: <%= @reservation.listing.num_of_people%> </p>
+    <p>Location: <%= @reservation.listing.location %> </p>
+    <p>Check-in Date: <%= @reservation.check_in_date %></p>
+
+    <p>Checkout Date: <%= @reservation.check_out_date %></p>
+    <P>price <%=@reservation.price%></P>
+
+    <strong>Payment Status:</strong>
+      <% if @reservation.payments.where(status: :authorized).count == 0%>
+      <span class="btn btn-danger"> NOT PAID </span>
+
+       <%= link_to 'Pay Now' , new_payment_path + "?id=" + @reservation.id.to_s, class: "btn btn-warning"  %>
+      <% else %>
+        <span class="btn btn-success">PAID</span>
+      <% end %>
+  </li>
+</ul>
+
+<!-- replace payments with price -->
+
+
+<!-- < % Reservation.where(user_id: current_user.id).each do |r| %>
+<div id="cancel_booking_< %=r.id%>">
+<a href= "/listings/< %=r.listing_id%>">< %= Listing.find(r.listing_id).title %></a><br>
+Start date: < %= r.start_date.strftime("%v") %><br>
+End date: < %= r.end_date.strftime("%v") %><br>
+Duration: < %= r.stay_duration %> days<br>
+Total Price: $< %= r.total_price %>.00 <br> -->

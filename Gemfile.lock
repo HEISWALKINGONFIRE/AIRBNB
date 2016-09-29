@@ -44,6 +44,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    braintree (2.66.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     byebug (9.0.5)
     carrierwave (1.0.0.beta)
@@ -196,6 +198,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  braintree
   byebug
   carrierwave (>= 1.0.0.beta)
   clearance

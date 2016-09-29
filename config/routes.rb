@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'payments/new'
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
@@ -23,10 +25,11 @@ Rails.application.routes.draw do
   resources :listings do
     resources :reservations
   end
-  post '/listings/confirm', to: 'listings#confirm', as: 'listing_confirm'
+  get '/listings/confirm', to: 'listings#confirm', as: 'listing_confirm'
 
   get '/reservations/confirm/:reservation_id', to: 'reservations#confirm', as: 'reservation_confirm'
- 
+  
+  resources :payments
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

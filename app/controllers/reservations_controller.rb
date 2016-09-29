@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
 			 @reservation.update(listing_id: @listing.id)
 			 ReservationMailer.notification_email(current_user.email, @host, @reservation.listing.id, @reservation.id).deliver_now
 			 ReservationJob.perform_later(current_user.email, @host, @reservation.listing.id, @reservation.id)
-			redirect_to reservation_confirm_path(@reservation.id)
+			redirect_to listing_reservation_path(@listing.id, @reservation.id)
 			
 		else
 			flash[:notice] = "dates are not available on #{@reservation.overlapping_dates(booked_dates)}"
@@ -24,6 +24,12 @@ class ReservationsController < ApplicationController
 			redirect_to new_reservation_path
 		end
 	end
+
+	def show
+		@reservation = Reservation.find(params[:id])
+	end
+
+	
 
 	def index
 	end 
@@ -37,6 +43,7 @@ class ReservationsController < ApplicationController
 	def reservation_params
 		params.require(:reservation).permit( :listing_id, :user_id, :price, :check_in_date, :check_out_date)
 	end
+
 
 
 

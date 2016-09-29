@@ -1,10 +1,56 @@
 confirmation page for reservation
+<!-- <center>
+don't use form_for cause it will prompt you to make an action called update!!!!!
+<%= form_for([@reservation.listing, @reservation]) do |f|%>
+	name <%= f.label @reservation.listing.name%>
+	
+	<br>
+	location <%= f.label @reservation.listing.location%>
+	
+	<br>
+	number of people <%= f.label @reservation.listing.num_of_people%>
+	
+	<br>
+	check in date <%= f.label @reservation.check_in_date%>
+	
+	<br>
+	check out date <%= f.label @reservation.check_out_date%>
+	
+	<br>
+	price <%= f.label @reservation.listing.price %>
+	<br>
+	<%= f.submit "confirm"%>
+	<br>
+<% end%>
+</center>>
+ -->
+<!-- # <%=@reservation.listing.name%>
+
+# location <%=@reservation.listing.location%><br>
+# number of people <%=@reservation.listing.num_of_people%><br>
+# check in <%=@reservation.check_in_date%><br>
+# check out <%=@reservation.check_out_date%><br>
+# total price <%=@reservation.listing.price%><br>
+# </center>
+
+# name
+# location
+# num_of_people
+# checkindate
+# checkoutdate
+# price
+ -->
+<!-- link_to "confirm", listing_confirm_path -->
 <center>
-form_for
-<%=@reservation.listing.name%>
-location <%=@reservation.listing.location%><br>
-number of people <%=@reservation.listing.num_of_people%><br>
-check in <%=@reservation.check_in_date%><br>
-check out <%=@reservation.check_out_date%><br>
-total price <%=@reservation.listing.price%><br>
+location <%=@reservation.listing.name%>
+<br>
+number of people <%=@reservation.listing.num_of_people%>
+<br>
+check in <%=@reservation.check_in_date%>
+<br>
+check out <%=@reservation.check_out_date%>
+<br>
+total price <%=@reservation.listing.price%>
+<br>
+<%=link_to "confirm", listing_reservations_path(@reservation.listing.id)%>
 </center>

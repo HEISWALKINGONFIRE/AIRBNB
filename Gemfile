@@ -38,6 +38,8 @@ gem 'mini_magick'
 gem "binding_of_caller"
 # active job
 gem 'sidekiq'
+# braintree
+gem 'braintree'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
